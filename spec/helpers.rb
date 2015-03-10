@@ -1,4 +1,4 @@
-shared_context 'optoro_skel' do
+shared_context 'optoro_redisha' do
   before do
   end
 end

@@ -1,4 +1,4 @@
-name 'optoro_skel'
+name 'optoro_redisha'
 maintainer 'Optoro'
 maintainer 'devops@optoro.com'
 license 'MIT'
