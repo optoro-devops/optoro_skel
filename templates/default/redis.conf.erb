@@ -1,0 +1,7 @@
+port 6379
+daemonize yes
+pidfile "/var/run/redis/redis.pid"
+logfile "/var/log/redis/redis.log"
+repl-timeout 300
+dir "/var/optoro/redis"
+<%= @slaveof %>

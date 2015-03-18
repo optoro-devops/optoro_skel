@@ -14,7 +14,26 @@ platforms:
     box_url: http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_ubuntu-14.04_chef-provisionerless.box
 
 suites:
-- name: default
+- name: redis-01
   encrypted_data_bag_secret_key_path: "test/integration/encrypted_data_bag_secret"
   run_list:
-    - recipe[optoro_skel::default]
+    - recipe[build-essential]
+    - recipe[optoro_redisha::default]
+    - recipe[optoro_redisha::initial-master]
+    - recipe[optoro_redisha::redis]
+    - recipe[optoro_redisha::sentinel]
+- name: redis-02
+  encrypted_data_bag_secret_key_path: "test/integration/encrypted_data_bag_secret"
+  run_list:
+    - recipe[build-essential]
+    - recipe[optoro_redisha::default]
+    - recipe[optoro_redisha::initial-slave]
+    - recipe[optoro_redisha::redis]
+    - recipe[optoro_redisha::sentinel]
+- name: redis-03
+  encrypted_data_bag_secret_key_path: "test/integration/encrypted_data_bag_secret"
+  run_list:
+    - recipe[build-essential]
+    - recipe[optoro_redisha::default]
+    - recipe[optoro_redisha::initial-sentinel]
+    - recipe[optoro_redisha::sentinel]

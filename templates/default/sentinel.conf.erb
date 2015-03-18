@@ -1,0 +1,9 @@
+daemonize yes
+pidfile "/var/run/redis/sentinel.pid"
+logfile "/var/log/redis/sentinel.log"
+port 26379
+<%= @sentinel %>
+sentinel failover-timeout sentinel_sentinel 60000
+sentinel config-epoch sentinel_sentinel 0
+sentinel leader-epoch sentinel_sentinel 0
+dir "/var/optoro/redis"
