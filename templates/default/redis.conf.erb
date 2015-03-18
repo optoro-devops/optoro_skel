@@ -5,3 +5,39 @@ logfile "/var/log/redis/redis.log"
 repl-timeout 300
 dir "/var/optoro/redis"
 <%= @slaveof %>
+
+activerehashing yes
+aof-rewrite-incremental-fsync yes
+appendfilename appendonly-6379.aof
+appendfsync everysec
+appendonly no
+auto-aof-rewrite-min-size 64mb
+auto-aof-rewrite-percentage 100
+client-output-buffer-limit normal 0 0 0
+client-output-buffer-limit pubsub 32mb 8mb 60
+client-output-buffer-limit slave 256mb 64mb 60
+databases 16
+dbfilename dump-6379.rdb
+hash-max-ziplist-entries 512
+hash-max-ziplist-value 64
+hz 10
+loglevel notice
+lua-time-limit 5000
+maxclients 10000
+no-appendfsync-on-rewrite no
+notify-keyspace-events ""
+rdbcompression yes
+repl-ping-slave-period 10
+repl-timeout 60
+    save 300 10
+    save 60 10000
+    save 900 1
+set-max-intset-entries 512
+slave-serve-stale-data yes
+slowlog-log-slower-than 10000
+slowlog-max-len 1024
+stop-writes-on-bgsave-error yes
+tcp-keepalive 0
+timeout 0
+zset-max-ziplist-entries 128
+zset-max-ziplist-value 64
