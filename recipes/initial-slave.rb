@@ -1,3 +1,5 @@
+# slave needs to be a slaveof master
+# slave's sentinel needs to connect to master and figure out the rest of the slaves/sentinels
 # Use Chef to create the template, use sentinel to monitor the template
 
 hosts = search(:node, 'recipe:optoro_redisha\:\:initial-master')

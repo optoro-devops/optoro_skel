@@ -1,3 +1,5 @@
+# Sentinel needs to connect to master to figure out the rest of the slaves and the sentinels
+# What happens if we add a future node after a running sentinel has re-arranged things?
 # Use Chef to create the template, use sentinel to monitor the template
 
 hosts = search(:node, 'recipe:optoro_redisha\:\:initial-master')
