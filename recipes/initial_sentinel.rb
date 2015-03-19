@@ -2,14 +2,17 @@
 # What happens if we add a future node after a running sentinel has re-arranged things?
 # Use Chef to create the template, use sentinel to monitor the template
 
-hosts = search(:node, 'recipe:optoro_redisha\:\:initial-master')
-master_ip = hosts.first['ipaddress']
+master_ip = '127.0.0.1'
+unless Chef::Config['solo']
+  hosts = search(:node, 'recipe:optoro_redisha\:\:initial-master')
+  master_ip = hosts.first['ipaddress']
+end
 
 template '/etc/redis/sentinel.conf' do
   owner 'redis'
   group 'redis'
-  variables ({
+  variables(
     :sentinel => "sentinel monitor sentinel_sentinel #{master_ip} 6379 2"
-  })
-  not_if { ::File.exists?('/etc/redis/sentinel.conf')}
+  )
+  not_if { ::File.exist?('/etc/redis/sentinel.conf') }
 end

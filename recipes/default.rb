@@ -3,7 +3,6 @@
 # machine2: slave redis, sentinel:   needs "slaveof" and "sentinel monitor" config lines
 # machine3: sentinel:                needs "sentinel monitor" config line
 
-
 # Build Tarball
 execute 'build-redis' do
   cwd Chef::Config[:file_cache_path]
@@ -22,9 +21,8 @@ user 'redis' do
   shell '/bin/false'
 end
 
-
 # Make supporting directories
-%w{ /var/optoro/redis /var/log/redis /etc/redis }.each do |redisdir|
+%w( /var/optoro/redis /var/log/redis /etc/redis ).each do |redisdir|
   directory redisdir do
     recursive true
     owner 'redis'
@@ -33,14 +31,14 @@ end
 end
 
 # Copy Init Scripts
-%w{ /etc/init.d/redis /etc/init.d/sentinel }.each do |redisinit|
+%w( /etc/init.d/redis /etc/init.d/sentinel ).each do |redisinit|
   cookbook_file redisinit do
     mode 0755
   end
 end
 
 # Allow services to be started (for subordinate cookbooks)
-%w{ redis sentinel }.each do |redisservice|
+%w( redis sentinel ).each do |redisservice|
   service redisservice do
     supports :start => true
     action :nothing
@@ -51,5 +49,3 @@ end
 # backups?
 # communicate to devs to talk with a sentinel server and not with redis directly:
 # http://redis.io/topics/sentinel-clients
-
-

@@ -5,17 +5,17 @@
 template '/etc/redis/redis.conf' do
   owner 'redis'
   group 'redis'
-  variables ({
+  variables(
     :slaveof => ''
-  })
-  not_if { ::File.exists?('/etc/redis/redis.conf')}
+  )
+  not_if { ::File.exist?('/etc/redis/redis.conf') }
 end
 
 template '/etc/redis/sentinel.conf' do
   owner 'redis'
   group 'redis'
-  variables ({
+  variables(
     :sentinel => "sentinel monitor sentinel_sentinel #{node['ipaddress']} 6379 2"
-  })
-  not_if { ::File.exists?('/etc/redis/sentinel.conf')}
+  )
+  not_if { ::File.exist?('/etc/redis/sentinel.conf') }
 end

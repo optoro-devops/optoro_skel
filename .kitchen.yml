@@ -19,7 +19,7 @@ suites:
   run_list:
     - recipe[build-essential]
     - recipe[optoro_redisha::default]
-    - recipe[optoro_redisha::initial-master]
+    - recipe[optoro_redisha::initial_master]
     - recipe[optoro_redisha::redis]
     - recipe[optoro_redisha::sentinel]
 - name: redis-02
@@ -27,7 +27,7 @@ suites:
   run_list:
     - recipe[build-essential]
     - recipe[optoro_redisha::default]
-    - recipe[optoro_redisha::initial-slave]
+    - recipe[optoro_redisha::initial_slave]
     - recipe[optoro_redisha::redis]
     - recipe[optoro_redisha::sentinel]
 - name: redis-03
@@ -35,5 +35,5 @@ suites:
   run_list:
     - recipe[build-essential]
     - recipe[optoro_redisha::default]
-    - recipe[optoro_redisha::initial-sentinel]
+    - recipe[optoro_redisha::initial_sentinel]
     - recipe[optoro_redisha::sentinel]
