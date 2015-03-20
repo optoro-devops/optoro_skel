@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+source 'http://gems.optoro.io/'
 
 gem 'berkshelf', '~> 3.2.1'
 
