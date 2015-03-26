@@ -12,3 +12,9 @@ done
 
 # Remove this file from the new repo
 git rm -f $0
+
+# remove the optoro_skel git commit history and fix the git remote
+rm -rf ./.git
+git init
+git remote add origin git@github.com:optoro-devops/$DIRNAME
+
