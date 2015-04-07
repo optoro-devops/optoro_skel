@@ -7,7 +7,7 @@ DIRNAME=${PWD##*/}
 for i in $(grep -rl optoro_skel * | grep -v .git | grep -v ${0##*/} ); do
   echo "Replacing optoro_skel in ${i}"
   #sed -i -e "s/optoro_skel/$DIRNAME/g" "$i"
-  ruby -pi -e "gsub('optoro_skel', '$DIRNAME')" $i               
+  ruby -pi -e "gsub('optoro_skel', '$DIRNAME')" $i
 done
 
 # Remove this file from the new repo
@@ -16,5 +16,11 @@ git rm -f $0
 # remove the optoro_skel git commit history and fix the git remote
 rm -rf ./.git
 git init
+bundle install
+berks install
+overcommit --sign pre-commit
+overcommit --install
 git remote add origin git@github.com:optoro-devops/$DIRNAME
-
+git add .
+git commit -am "First Commit"
+git push origin master
