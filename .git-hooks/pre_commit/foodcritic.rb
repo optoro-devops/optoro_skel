@@ -10,7 +10,7 @@ module Overcommit
             return :stop, 'run `bundle install` to install the foodcritic gem'
           end
 
-          review = ::FoodCritic::Linter.new.check cookbook_paths: '.'
+          review = ::FoodCritic::Linter.new.check cookbook_paths: `git rev-parse --show-toplevel`.tr("\n", '')
           [(review.warnings.empty? ? :pass : :fail), review.to_s]
         end
       end
