@@ -10,6 +10,9 @@ for i in $(grep -rl optoro_skel . | grep -v .git | grep -v ${0##*/} ); do
   ruby -pi -e "gsub('optoro_skel', '$DIRNAME')" $i
 done
 
+# Reset the version of the new repo to 0.0.1
+ruby -pi -e "gsub(/^version.*$/, \"version '0.0.1'\")" metadata.rb
+
 # Remove this file from the new repo
 git rm -f $0
 
