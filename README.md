@@ -1,15 +1,31 @@
-optoro\_skel Cookbook
-========================
-This cookbook is a skeleton.
+# Description
 
-Information on our workflow is available at [here](https://optoro.atlassian.net/wiki/display/DO/Adding+a+cookbook+to+the+Chef+Pipeline)
+This is a skeleton
 
-In order to run guard thta will monitor and test your cookbook against chefspec, rubocop and foodcritic first run bundle install,
-and then run bundle exec guard in a separate console
+# Requirements
 
-knife-solo is used to create test databags for use with serverspec:
-```
-  cd test/integration
-  bundle exec knife solo data bag create <data_bag>
-  bundle exec knife solo data bag create <data_bag> <data_bag_item>
-```
+## Platform:
+
+* ubuntu (= 14.04)
+
+## Cookbooks:
+
+*No dependencies defined*
+
+# Attributes
+
+*No attributes defined*
+
+# Recipes
+
+* [optoro_skel::default](#optoro_skeldefault) - This is the default recipe for optoro_skel
+
+## optoro_skel::default
+
+Default Recipe Description
+
+# License and Maintainer
+
+Maintainer:: Optoro (<devops@optoro.com>)
+
+License:: MIT
