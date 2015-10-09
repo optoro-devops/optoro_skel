@@ -86,6 +86,10 @@ Strainerfile
 .colander
 .strainer
 
+# Thorfile #
+############
+Thorfile
+
 # Vagrant #
 ###########
 .vagrant
