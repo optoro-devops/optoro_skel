@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 source 'http://gems.optoro.io/'
 
-gem 'berkshelf', '~> 3.2.1'
+gem 'berkshelf', '~> 4.0.1'
 
 group :integration do
   gem 'test-kitchen', '~> 1.4.0'
@@ -11,6 +11,7 @@ group :integration do
 end
 
 group :development do
+  gem 'thor'
   gem 'overcommit'
   gem 'guard',  '~> 2.8.0'
   gem 'guard-kitchen', '~> 0.0.2'
@@ -23,7 +24,6 @@ group :development do
   gem 'foodcritic-rules-optoro'
   gem 'chefspec', '~> 4.3.0'
   gem 'rspec', '~> 3.1.0'
-  gem 'strainer', '~> 3.4.0'
   gem 'rubocop', '~> 0.27.1'
   gem 'knife-solo', '0.4.2'
   gem 'knife-solo_data_bag', '1.1.0'
