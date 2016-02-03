@@ -26,4 +26,3 @@ guard :rspec, cmd: 'bundle exec rspec --color --require spec_helper spec/' do
   watch(%r{^(resources)/(.+).rb$}) { 'spec' }
   watch('spec/spec_helper.rb') { 'spec' }
 end
-

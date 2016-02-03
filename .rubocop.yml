@@ -1,6 +1,3 @@
-AllCops:
-  Exclude:
-    - Guardfile
 LineLength:
   Enabled: false
 HashSyntax:
