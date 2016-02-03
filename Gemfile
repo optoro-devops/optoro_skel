@@ -13,6 +13,8 @@ end
 
 group :development do
   gem 'overcommit'
+  gem 'git'
+  gem 'chef', '~> 12.6.0'
   gem 'guard'
   gem 'guard-kitchen'
   gem 'guard-rubocop'
