@@ -1,4 +1,3 @@
-source 'https://rubygems.org'
 source 'http://gems.optoro.io/'
 
 gem 'berkshelf', '~> 4.0.1'
@@ -7,7 +6,7 @@ group :integration do
   gem 'test-kitchen', '~> 1.4.0'
   gem 'kitchen-ec2', '~> 0.10.0'
   gem 'kitchen-docker', '~> 1.5.0'
-  gem 'kitchen-vagrant', '~> 0.15.0'
+  gem 'kitchen-vagrant', '~> 0.19.0'
   gem 'kitchen-joyent', '~> 0.2.2'
 end
 
